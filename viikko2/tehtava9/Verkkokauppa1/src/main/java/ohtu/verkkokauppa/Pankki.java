@@ -1,8 +1,11 @@
 package ohtu.verkkokauppa;
 
+import org.springframework.stereotype.Component;
+
 import ohtu.interfaces.KirjanpitoInterface;
 import ohtu.interfaces.PankkiInterface;
 
+@Component
 public class Pankki implements PankkiInterface {
 
     private KirjanpitoInterface kirjanpito;

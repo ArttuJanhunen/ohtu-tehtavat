@@ -2,9 +2,12 @@ package ohtu.verkkokauppa;
 
 import java.util.*;
 
+import org.springframework.stereotype.Component;
+
 import ohtu.interfaces.KirjanpitoInterface;
 import ohtu.interfaces.VarastoInterface;
 
+@Component
 public class Varasto implements VarastoInterface {
 
     private KirjanpitoInterface kirjanpito;
