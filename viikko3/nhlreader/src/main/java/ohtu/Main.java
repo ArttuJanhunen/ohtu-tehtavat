@@ -23,6 +23,7 @@ public class Main {
 
     Gson mapper = new Gson();
     Player[] players = mapper.fromJson(bodyText, Player[].class);
+    Arrays.sort(players);
 
     System.out.println("Suomalaiset NHL-pelaajat:");
     System.out.println("Ajankohtainen (" +format.format(date)+ ") Tilanne:");
