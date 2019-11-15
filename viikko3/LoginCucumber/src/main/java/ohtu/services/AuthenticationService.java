@@ -15,8 +15,7 @@ public class AuthenticationService {
 
     public boolean logIn(String username, String password) {
         for (User user : userDao.listAll()) {
-            if (user.getUsername().equals(username)
-                    && user.getPassword().equals(password)) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return true;
             }
         }
@@ -39,7 +38,24 @@ public class AuthenticationService {
     }
 
     private boolean invalid(String username, String password) {
-        // validity check of username and password
+        if (username.length() < 3) {
+            return true;
+        }
+
+        if (password.length() < 8 || !containsNumber(password)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean containsNumber(String password) {
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (Character.isDigit(c)) {
+                return true;
+            }
+        }
 
         return false;
     }
